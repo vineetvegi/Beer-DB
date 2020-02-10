@@ -1,0 +1,63 @@
+<button class="badge badge-primary" style="float:left" type="button" routerLink="/">Home</button>
+<span class="badge badge-info">Page {{current}}</span>
+<span class="badge badge-dark" style="float:right">
+      <span class="badge badge-dark" style="font-size: 85%">Per Page</span>
+<select class="badge badge-dark" style="font-size: 85%" id="perpage" (ngModel)="perpage" name="perpage" (change)="onChange()">
+	  <option *ngFor="let opt of [1,2,3,4]">{{opt * 9}}</option>
+  </select>
+</span>
+<br>
+<br>
+<div>
+    <a href="#" class="previous page-btn" routerLink="['/beer', searchitem]" *ngIf="current>1" (click)="getData(current - 1)">&laquo; Previous</a>
+    <a href="#" class="next page-btn" routerLink="['/beer', searchitem]" *ngIf="current<totalpsts/perpage" (click)="getData(current + 1)">Next &raquo;</a>
+</div>
+<br>
+<br>
+<div class="container-fluid">
+    <div *ngFor="let pst of lstposts; let i = index">
+        <div *ngIf="i % 3 == 0" class="row">
+            <div *ngFor="let number of [0,1,2]">
+                <div class="col-sm-4" *ngIf="i + number  < lstposts.length">
+                    <div class="card" style="width:300px">
+                        <div class="card-header">{{lstposts[i + number].name}}</div>
+                        <div class="center card-img-bottom">
+                            <img class="imageset" [src]="lstposts[i + number].image_url" alt="Card image">
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{lstposts[i + number].tagline}}</p>
+                        </div>
+                        <div>
+                            <p class="card-text">{{lstposts[i + number].volume.value | volume}}</p>
+                        </div>
+
+                        <div class="card-footer">
+                            <button id="{{i + number}}" type="button" class="btn btn-primary" (click)="open($event, content)">More Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template let-modal #content>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{lstposts[fullId].name}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+        <label><strong>Description:</strong></label>
+        <p style="text-align:justify;">{{lstposts[fullId].description | truncate:[toggleId, lstposts[fullId].id]}}
+            <span class="badge badge-dark" id={{lstposts[fullId].id}} (click)="toggleRead($event)" *ngIf="lstposts[fullId].description.split(' ').length > 20 && toggleId != lstposts[fullId].id" title="Click to read full description.">>>></span>
+        </p>
+        <label><strong>Ingredients:</strong></label>
+        <p>{{lstposts[fullId].ingredientsString}}</p>
+        <label><strong>Food Pairing:</strong></label>
+        <p>{{lstposts[fullId].food_pairingString}}</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+    </div>
+</ng-template>

@@ -1,0 +1,57 @@
+.center {
+    margin: auto;
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.imageset {
+    margin: inherit;
+    width: 30%;
+    padding: 10px;
+    object-fit: cover;
+}
+
+.row {
+    display: -webkit-inline-box;
+    margin-top: 10px;
+}
+
+.card-header {
+    line-height: 30px;
+    height: 75px;
+    /* or whatever width you want. */
+    max-height: 75px;
+    /* or whatever width you want. */
+}
+
+.card-text {
+    height: 55px;
+    /* or whatever width you want. */
+    max-height: 75px;
+    /* or whatever width you want. */
+    display: -webkit-inline-box;
+}
+
+.page-btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+.page-btn:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+    float: left;
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+    float: right;
+}
