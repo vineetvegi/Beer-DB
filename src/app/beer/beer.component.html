@@ -1,16 +1,16 @@
-<button class="badge badge-primary" style="float:left" type="button" routerLink="/">Home</button>
-<span class="badge badge-info">Page {{current}}</span>
+<button class="btn btn-primary" style="float:left;" type="button" routerLink="/">Home</button>
+<span class="btn btn-info">Page {{current}}</span>
 <span class="badge badge-dark" style="float:right">
-      <span class="badge badge-dark" style="font-size: 85%">Per Page</span>
-<select class="badge badge-dark" style="font-size: 85%" id="perpage" (ngModel)="perpage" name="perpage" (change)="onChange()">
+      <span class="btn btn-dark" style="font-size: 100%">Per Page</span>
+<select class="badge badge-dark" style="font-size: 100%" id="perpage" [(ngModel)]="perpage" name="perpage" (change)="onChange()">
 	  <option *ngFor="let opt of [1,2,3,4]">{{opt * 9}}</option>
   </select>
 </span>
 <br>
 <br>
 <div>
-    <a href="#" class="previous page-btn" routerLink="['/beer', searchitem]" *ngIf="current>1" (click)="getData(current - 1)">&laquo; Previous</a>
-    <a href="#" class="next page-btn" routerLink="['/beer', searchitem]" *ngIf="current<totalpsts/perpage" (click)="getData(current + 1)">Next &raquo;</a>
+    <a href="#" class="previous page-btn" [routerLink]="['/beer', searchitem]" *ngIf="current>1" (click)="getData(current - 1)">&laquo; Previous</a>
+    <a href="#" class="next page-btn" [routerLink]="['/beer', searchitem]" *ngIf="current<totalpsts/perpage" (click)="getData(current + 1)">Next &raquo;</a>
 </div>
 <br>
 <br>

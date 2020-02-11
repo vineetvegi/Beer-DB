@@ -32,6 +32,9 @@
     /* or whatever width you want. */
     display: -webkit-inline-box;
 }
+.badge-primary {
+    size: 1rem;
+}
 
 .page-btn {
     text-decoration: none;

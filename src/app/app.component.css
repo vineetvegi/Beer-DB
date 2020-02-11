@@ -2,5 +2,7 @@
     background-color: lightgoldenrodyellow;
 }
 .subt {
-    font-family: 0.6em sans-serif;
+    font-family: 0.7em sans-serif;
+    font-style: italic;
+    font-stretch: extra-expanded;
 }

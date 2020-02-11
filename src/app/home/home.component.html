@@ -7,7 +7,7 @@
     <table align="center" class="b">
         <tr>
             <td style="text-align:right;width:10%">
-                <input required type="checkbox" style="text-align:left" name="before" [(ngModel)]="brewbefore" #before="ngModel" value="Unchecked" (change)='onCheck($event)' required></td>
+                <input required type="checkbox" style="text-align:left; transform: 1.5px;" name="before" [(ngModel)]="brewbefore" #before="ngModel" value="Unchecked" (change)='onCheck($event)' required></td>
             <td>Brewed Before</td>
             <td><select *ngIf="before.valid" [(ngModel)]="bmonth" name="bmonth" (change)="onChange()">
           <option *ngFor="let number of months">{{number}}</option>
