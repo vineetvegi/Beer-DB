@@ -10,7 +10,7 @@ export class BeerServiceService {
      filter;
      perpage;
      constructor(private httpclient: HttpClient) {}
-     getPosts(page) {
+     getPosts(page?) {
       if (!page) {
         page = 1;
       }

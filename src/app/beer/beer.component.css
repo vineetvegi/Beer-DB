@@ -23,6 +23,8 @@
     /* or whatever width you want. */
     max-height: 75px;
     /* or whatever width you want. */
+    font-weight: 500;
+    color: peru;
 }
 
 .card-text {
@@ -31,6 +33,7 @@
     max-height: 75px;
     /* or whatever width you want. */
     display: -webkit-inline-box;
+    font-style: italic;
 }
 .badge-primary {
     size: 1rem;

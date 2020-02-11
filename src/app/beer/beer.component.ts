@@ -67,7 +67,8 @@ export class BeerComponent implements OnInit {
         let ingredientsNames = [];
         for (const j in ingredients) {
           if (Array.isArray(ingredients[j])) {
-            ingredientsNames = ingredientsNames.concat(ingredients[j].map(ingredient => ingredient.name));
+            // tslint:disable-next-line: max-line-length
+            ingredientsNames = ingredientsNames.concat(ingredients[j].map(ingredient => ({name: ingredients.name, amount: ingredients.amount + ingredients})));
           } else {
             ingredientsNames.push(ingredients[j]);
           }
