@@ -1,5 +1,7 @@
 .jumbotron {
-    background-color: lightgoldenrodyellow;
+    background-color: hsla(34, 100%, 49%, 0.442);
+    font-size: 15rem;
+    font-weight: bolder;
 }
 .subt {
     font-family: 0.7em sans-serif;

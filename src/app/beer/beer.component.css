@@ -18,8 +18,8 @@
 }
 
 .card-header {
-    line-height: 30px;
-    height: 75px;
+    line-height: 50px;
+    height: 95px;
     /* or whatever width you want. */
     max-height: 75px;
     /* or whatever width you want. */
@@ -37,6 +37,9 @@
 }
 .badge-primary {
     size: 1rem;
+}
+.badge-dark {
+    cursor: pointer;
 }
 
 .page-btn {

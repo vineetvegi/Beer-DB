@@ -1,9 +1,10 @@
-<button class="btn btn-primary" style="float:left;" type="button" routerLink="/">Home</button>
+<button class="btn btn-primary" style="float:left;" type="button" [routerLink]="['/']">Home</button>
+<router-outlet></router-outlet>
 <span class="btn btn-info">Page {{current}}</span>
 <span class="badge badge-dark" style="float:right">
       <span class="btn btn-dark" style="font-size: 100%">Per Page</span>
 <select class="badge badge-dark" style="font-size: 100%" id="perpage" [(ngModel)]="perpage" name="perpage" (change)="onChange()">
-	  <option *ngFor="let opt of [1,2,3,4]">{{opt * 9}}</option>
+	  <option *ngFor="let opt of [1,2,3,4]">{{opt * 12}}</option>
   </select>
 </span>
 <br>
@@ -14,10 +15,14 @@
 </div>
 <br>
 <br>
+
+<div *ngIf="totalpsts!=0; then thenBlock else elseBlock"></div>
+
+<ng-template #thenBlock>
 <div class="container-fluid">
     <div *ngFor="let pst of lstposts; let i = index">
-        <div *ngIf="i % 3 == 0" class="row">
-            <div *ngFor="let number of [0,1,2]">
+        <div *ngIf="i % 4 == 0" class="row">
+            <div *ngFor="let number of [0,1,2,3]">
                 <div class="col-sm-4" *ngIf="i + number  < lstposts.length">
                     <div class="card" style="width:300px">
                         <div class="card-header">{{lstposts[i + number].name}}</div>
@@ -28,7 +33,7 @@
                             <p class="card-text">{{lstposts[i + number].tagline}}</p>
                         </div>
                         <div>
-                            <p class="card-text">{{lstposts[i + number].volume.value | volume}}</p>
+                            <p><strong>{{lstposts[i + number].abv}}</strong></p>
                         </div>
 
                         <div class="card-footer">
@@ -40,6 +45,14 @@
         </div>
     </div>
 </div>
+</ng-template>
+
+<ng-template #elseBlock>
+  <div class="alert alert-danger">
+    <strong>No records found!</strong>
+  </div>
+</ng-template>
+
 <ng-template let-modal #content>
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">{{lstposts[fullId].name}}</h4>
@@ -56,8 +69,11 @@
         <p>{{lstposts[fullId].ingredientsString}}</p>
         <label><strong>Food Pairing:</strong></label>
         <p>{{lstposts[fullId].food_pairingString}}</p>
+        <label><strong>Volume</strong></label>
+        <p>{{lstposts[fullId].volume.value | volume}}</p>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+
     </div>
 </ng-template>

@@ -6,8 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class TruncatePipe implements PipeTransform {
-
-transform(value: string, args: string[]): string {
+// It truncates the description if the length is more than 20 words by adding '...'. 
+transform(value: string, args: string[]): string { 
     const limit = 20;
     const trail = '...';
     const values = value.split(' ');
