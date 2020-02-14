@@ -1,16 +1,17 @@
-/* body {
-  background-image: url("https://nebula.wsimg.com/0b85aafbfd3e722f17781bd4ef0c19d0?AccessKeyId=7116CF48511EDD0D013A&disposition=0&alloworigin=1");
-  background-color: #cccccc;
- } */
 .btn-outline-primary {
     text-align: center;
-    
 }
-table.b {
+main.t {
+  border: 1px;
+}
+.container {
   text-align: center;
-  table-layout: fixed;
-	  width: 450px;
+  background-position: center;
 }
-.carousel-item {
-  height: 50px;
+.cb1, .cb2, .cb3 {
+  font-size: 3rem;
+  font-weight: bolder;
+  font-style: oblique;
+  color: brown;
+
 }

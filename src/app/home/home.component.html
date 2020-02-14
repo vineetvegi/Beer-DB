@@ -1,16 +1,15 @@
-<div class="body">
+
 <h1>Filters</h1>
 <!--
                before 05-2007
                after  05-2016
                present-->
         
-<div>
-    <table align="center" class="b">
+    <table class="maint">
         <tr>
-            <td style="text-align:right;width:10%">
-                <input required type="checkbox" style="text-align:left; transform: 1.5px;" name="before" [(ngModel)]="brewbefore" #before="ngModel" value="Unchecked" (change)='onCheck($event)' required></td>
-            <td>Brewed Before</td>
+            <td style="text-align:right">
+                <input required type="checkbox" style="text-align:left" name="before" [(ngModel)]="brewbefore" #before="ngModel" value="Unchecked" (change)='onCheck($event)' required></td>
+            <td class="c1">Brewed Before</td>
 
             <td><select *ngIf="before.valid" [(ngModel)]="byear" name="byear" (change)="onChange()">
           <option *ngFor="let number of years">{{number}}</option>
@@ -19,26 +18,25 @@
         </tr>
 
         <tr>
-            <td style="text-align:right;width:10%">
-                <input required type="checkbox" style="text-align:left" name="after" [(ngModel)]="brewafter" required #after="ngModel" value="Unchecked" (change)='onCheck($event)'></td>
-            <td>Brewed After</td>
+            <td style="text-align:right">
+                <input required type="checkbox" style="text-align:right" name="after" [(ngModel)]="brewafter" required #after="ngModel" value="Unchecked" (change)='onCheck($event)'></td>
+            <td class="c1">Brewed After</td>
             <td><select *ngIf="after.valid" [(ngModel)]="ayear" name="ayear" (change)="onChange()">
           <option *ngFor="let number of years">{{number}}</option>
         </select>
             </td>
         </tr>
         <tr>
-            <td style="text-align:right;width:10%"><input required type="checkbox" style="text-align:left" name="AlV" value="Unchecked" [(ngModel)]="Al/V" required #ALV="ngModel" (change)='onCheck($event)'></td>
-            <td>Alcohol/Volume</td>
+            <td style="text-align:right"><input required type="checkbox" style="text-align:left" name="AlV" value="Unchecked" [(ngModel)]="Al/V" required #ALV="ngModel" (change)='onCheck($event)'></td>
+            <td class="c1">Alcohol/Volume</td>
             <td><select *ngIf="ALV.valid" [(ngModel)]="abvpercent" name="abvpercent" (change)="onChange()">
               <option *ngFor="let number of [0,5,15]">{{number*2}}-{{(number+5)*3}}</option>
             </select></td>
         </tr>
 
     </table>
-</div>
 <br>
-<div class="form-check">
+<!-- <div class="form-check">
     <label class="form-check-label">
     <input type="checkbox" class="form-check-input" name="tc" [(ngModel)]="check" required #tc="ngModel">Enable Search
   </label>
@@ -49,10 +47,9 @@
     <div class="input-group mb-3" style="width:20%;display:inline-flex">
         <input type="text" class="form-control" placeholder="Search" [(ngModel)]="item" *ngIf="tc.valid" name="item" required>
     </div>
-</div>
+</div> -->
 
 
-<button class="btn btn-outline-primary" (click)="onClick()" type="button">Show Results</button>
+<button class="btn btn-outline-primary" (click)="onClick()" type="button">View All</button>
 
 <router-outlet></router-outlet>
-</div>

@@ -64,3 +64,7 @@
     color: white;
     float: right;
 }
+.modal-header {
+    height: max-content;
+    width: max-content;
+}

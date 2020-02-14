@@ -24,7 +24,7 @@
         <div *ngIf="i % 4 == 0" class="row">
             <div *ngFor="let number of [0,1,2,3]">
                 <div class="col-sm-4" *ngIf="i + number  < lstposts.length">
-                    <div class="card" style="width:300px">
+                    <div class="card" style="width:350px">
                         <div class="card-header">{{lstposts[i + number].name}}</div>
                         <div class="center card-img-bottom">
                             <img class="imageset" [src]="lstposts[i + number].image_url" alt="Card image">
@@ -65,8 +65,25 @@
         <p style="text-align:justify;">{{lstposts[fullId].description | truncate:[toggleId, lstposts[fullId].id]}}
             <span class="badge badge-dark" id={{lstposts[fullId].id}} (click)="toggleRead($event)" *ngIf="lstposts[fullId].description.split(' ').length > 20 && toggleId != lstposts[fullId].id" title="Click to read full description.">>>></span>
         </p>
-        <label><strong>Ingredients:</strong></label>
-        <p>{{lstposts[fullId].ingredientsString}}</p>
+        <table id="example" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+        <th>What you'll need</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+        <td>{{lstposts[fullId].ingredientsString}}</td>
+        </tr>
+        </tbody>
+        </table>
+        <!-- <td>lstposts[fullId].ingredients.name</td>
+        <td>lstposts.ingredients.name</td>
+        <td>lstposts.ingredients.name</td>
+        <td>lstposts.ingredients.name</td>
+        <td>lstposts.ingredients.name</td> -->
+        <!-- <label><strong>Ingredients:</strong></label>
+        <p>{{lstposts[fullId].ingredientsString}}</p> -->
         <label><strong>Food Pairing:</strong></label>
         <p>{{lstposts[fullId].food_pairingString}}</p>
         <label><strong>Volume</strong></label>
