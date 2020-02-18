@@ -17,8 +17,9 @@ export class BeerComponent implements OnInit {
   @Input() my_modal_title;
   // tslint:disable-next-line:variable-name
   @Input() my_modal_content;
+  // tslint:disable-next-line: variable-name
   constructor(private _beerService: BeerServiceService,
-    private route: ActivatedRoute, private modalService: NgbModal) { }
+              private route: ActivatedRoute, private modalService: NgbModal) { }
 
   totalpsts = 325;
   perpage: number;
@@ -30,7 +31,7 @@ export class BeerComponent implements OnInit {
   modalObj: any;
   fullId;
 
-  // EventHandler to update description state. For expanding the description. 
+  // EventHandler to update description state. For expanding the description.
   toggleRead(event, target, style, display = 'none') {
     this.toggleId = event.target.id;
   }
@@ -71,22 +72,32 @@ export class BeerComponent implements OnInit {
       // tslint:disable-next-line: forin
       for (const i in this.lstposts) {
         const ingredients = this.lstposts[i].ingredients;
-        let ingredientsNames = [];
+        const ingredientsNames = {};
+        const ingredientsvalues = {};
+        this.lstposts[i].ingredientsString = [];
+        // tslint:disable-next-line: forin
         for (const j in ingredients) {
-          // Checks whether the ingridient field is Array
-          if (Array.isArray(ingredients[j])) {
-            // tslint:disable-next-line: max-line-length
-            // If true then it concatienates the elements of the Array to ingredients list.
-            ingredientsNames = ingredientsNames.concat(ingredients[j].map(ingredient => ingredient.name));
-          } else {
-            ingredientsNames.push(ingredients[j]); // If already a string push to ingredients list.
-          }
+            if (!ingredientsNames[j]) { ingredientsNames[j] = []; }
+            // Checks whether the ingridient field is Array
+            if (Array.isArray(ingredients[j])) {
+                // tslint:disable-next-line: max-line-length
+                // If true then it concatienates the elements of the Array to ingredients list.
+                ingredientsNames[j] = ingredientsNames[j].concat(ingredients[j].map(ingredient => ingredient.name));
+            } else {
+                ingredientsNames[j].push(ingredients[j]); // If already a string push to ingredients list.
+            }
+    
+            this.lstposts[i].ingredientsString.push({
+                name: j,
+                value: ingredientsNames[j].join(', ') + '.'
+            });
         }
+        console.log(this.lstposts[i].ingredientsString);
 
         // tslint:disable-next-line: no-unused-expression
         this.toggleId;
         // Converts ingredients list to ingredientsString.
-        this.lstposts[i].ingredientsString = ingredientsNames.join(', ') + '.';
+        // this.lstposts[i].ingredientsString = ingredientsNames[j].join(', ') + '.';
         // Converts food_pairing list to food_pairingString
         this.lstposts[i].food_pairingString = this.lstposts[i].food_pairing.join(', ') + '.';
       }

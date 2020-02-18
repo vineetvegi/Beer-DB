@@ -7,28 +7,32 @@
         
     <table class="maint">
         <tr>
-            <td style="text-align:right">
-                <input required type="checkbox" style="text-align:left" name="before" [(ngModel)]="brewbefore" #before="ngModel" value="Unchecked" (change)='onCheck($event)' required></td>
-            <td class="c1">Brewed Before</td>
+            <td>
+                <input required type="checkbox"  name="before" [(ngModel)]="brewbefore" #before="ngModel" value="Unchecked" (change)='onCheck($event)' required></td>
+            <td class="cb1">Brewed Before</td>
 
             <td><select *ngIf="before.valid" [(ngModel)]="byear" name="byear" (change)="onChange()">
           <option *ngFor="let number of years">{{number}}</option>
         </select>
             </td>
         </tr>
-
+    </table>
+    <table>
         <tr>
-            <td style="text-align:right">
-                <input required type="checkbox" style="text-align:right" name="after" [(ngModel)]="brewafter" required #after="ngModel" value="Unchecked" (change)='onCheck($event)'></td>
-            <td class="c1">Brewed After</td>
+            <td>
+                <input required type="checkbox" name="after" [(ngModel)]="brewafter" required #after="ngModel" value="Unchecked" (change)='onCheck($event)'></td>
+            <td class="cb2">Brewed After</td>
             <td><select *ngIf="after.valid" [(ngModel)]="ayear" name="ayear" (change)="onChange()">
           <option *ngFor="let number of years">{{number}}</option>
         </select>
             </td>
         </tr>
+    </table>
+    <table>
         <tr>
-            <td style="text-align:right"><input required type="checkbox" style="text-align:left" name="AlV" value="Unchecked" [(ngModel)]="Al/V" required #ALV="ngModel" (change)='onCheck($event)'></td>
-            <td class="c1">Alcohol/Volume</td>
+            <td>
+                <input required type="checkbox" style="text-align:right" name="AlV" value="Unchecked" [(ngModel)]="Al/V" required #ALV="ngModel" (change)='onCheck($event)'></td>
+            <td class="cb3">Alcohol/Volume</td>
             <td><select *ngIf="ALV.valid" [(ngModel)]="abvpercent" name="abvpercent" (change)="onChange()">
               <option *ngFor="let number of [0,5,15]">{{number*2}}-{{(number+5)*3}}</option>
             </select></td>

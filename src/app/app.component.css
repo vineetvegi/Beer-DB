@@ -11,8 +11,9 @@
     
 .bg {
     background-image: url('https://www.hopculture.com/wp-content/uploads/2018/03/best-spring-beers-hop-culture-LEAD.jpg');
-    height: 100%;
-    background-position: inherit;
-    background-repeat: no-repeat;
+    height: auto;
+    width: auto;
     background-size: cover;
+    background-repeat: no-repeat;
+    
 }

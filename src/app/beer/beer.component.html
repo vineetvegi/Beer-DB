@@ -72,8 +72,9 @@
         </tr>
         </thead>
         <tbody>
-            <tr>
-        <td>{{lstposts[fullId].ingredientsString}}</td>
+            <tr *ngFor="let ingredientname of lstposts[fullId].ingredientsString">
+                <td>{{ingredientname.name}}</td>
+                <td>{{ingredientname.value}}</td>
         </tr>
         </tbody>
         </table>
@@ -90,7 +91,8 @@
         <p>{{lstposts[fullId].volume.value | volume}}</p>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
-
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>    
     </div>
 </ng-template>
+
+<router-outlet></router-outlet>

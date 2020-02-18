@@ -3,6 +3,8 @@
 }
 main.t {
   border: 1px;
+  padding-left: 75rem;
+  padding-top: 30rem;
 }
 .container {
   text-align: center;
