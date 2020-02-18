@@ -86,7 +86,7 @@ export class BeerComponent implements OnInit {
             } else {
                 ingredientsNames[j].push(ingredients[j]); // If already a string push to ingredients list.
             }
-    
+
             this.lstposts[i].ingredientsString.push({
                 name: j,
                 value: ingredientsNames[j].join(', ') + '.'
