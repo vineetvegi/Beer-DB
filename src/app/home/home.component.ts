@@ -18,18 +18,17 @@ export class HomeComponent implements OnInit {
   byear;
   ayear;
   abvpercent;
-  
   // tslint:disable-next-line:variable-name
   constructor(private _beerService: BeerServiceService, private _router: Router) { }
 
   // Will return an array of values from start to stop by incrementing the step value
-  /**
-   * 
-   * @param start takes a date "2007/"
-   * @param stop 
-   * @param step 
-   * @returns  
-   */
+  // /**
+  //  *
+  //  * @param start takes a date "2007/"
+  //  * @param stop
+  //  * @param step
+  //  * @returns
+  //  */
   range(start, stop, step) {
     return Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step));
   }
