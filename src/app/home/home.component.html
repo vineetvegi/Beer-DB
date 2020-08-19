@@ -37,7 +37,7 @@
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <input type="checkbox" name="AlV" value="Unchecked" [(ngModel)]="AlV" required #ALV="ngModel" (change)='onCheck($event)' />
+                  <input type="checkbox" name="ALV" value="Unchecked" [(ngModel)]="ALV" required #ALV="ngModel" (change)='onCheck($event)' />
                 </span>
                 <span class="input-group-text">Alcohol/Volume</span>
                 <select *ngIf="ALV.valid" [(ngModel)]="abvpercent" name="abvpercent" (change)="onChange()">
