@@ -1,5 +1,6 @@
 
 <h5>If you would like to sort the results you can do so by applying the filters</h5>
+
 <!--
                before 05-2007
                after  05-2016
@@ -11,7 +12,7 @@
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
-                  <input type="checkbox" name="before" [(ngModel)]="before" #before="ngModel" value="Unchecked" (change)='onCheck($event)' required />
+                  <input type="checkbox" name="before" [(ngModel)]="brewbefore" #before="ngModel" value="Unchecked" (change)='onCheck($event)' required />
                 </span>
                 <span class="input-group-text">Brewed Before</span>
               </div>
@@ -24,7 +25,7 @@
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <input type="checkbox" name="after" [(ngModel)]="after" required #after="ngModel" value="Unchecked" (change)='onCheck($event)' required />
+                  <input type="checkbox" name="after" [(ngModel)]="brewafter" required #after="ngModel" value="Unchecked" (change)='onCheck($event)' required />
                 </span>
                 <span class="input-group-text">Brewed After</span>
                 <select *ngIf="after.valid" [(ngModel)]="ayear" name="ayear" (change)="onChange()">
@@ -37,10 +38,10 @@
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <input type="checkbox" name="ALV" value="Unchecked" [(ngModel)]="ALV" required #ALV="ngModel" (change)='onCheck($event)' />
+                  <input type="checkbox" name="AlV" value="Unchecked" [(ngModel)]="Al/V" required #AlV="ngModel" (change)='onCheck($event)' />
                 </span>
                 <span class="input-group-text">Alcohol/Volume</span>
-                <select *ngIf="ALV.valid" [(ngModel)]="abvpercent" name="abvpercent" (change)="onChange()">
+                <select *ngIf="AlV.valid" [(ngModel)]="abvpercent" name="abvpercent" (change)="onChange()">
                   <option *ngFor="let number of [0,5,15]">{{number*2}}-{{(number+5)*3}}</option>
                 </select>
               </div>
