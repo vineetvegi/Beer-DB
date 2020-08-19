@@ -1,19 +1,13 @@
 .btn-outline-primary {
     text-align: center;
 }
-main.t {
+main {
   border: 1px;
-  padding-left: 75rem;
+  text-align: center;
   padding-top: 30rem;
 }
 .container {
   text-align: center;
   background-position: center;
 }
-.cb1, .cb2, .cb3 {
-  font-size: 3rem;
-  font-weight: bolder;
-  font-style: oblique;
-  color: brown;
 
-}

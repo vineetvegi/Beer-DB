@@ -29,6 +29,7 @@
                         <div class="center card-img-bottom">
                             <img class="imageset" [src]="lstposts[i + number].image_url" alt="Card image">
                         </div>
+                        <br />
                         <div class="card-body">
                             <p class="card-text">{{lstposts[i + number].tagline}}</p>
                         </div>
@@ -56,7 +57,7 @@
 <ng-template let-modal #content>
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">{{lstposts[fullId].name}}</h4>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <button type="button" class="close" aria-label="Close" data-dismiss="modal" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
     </div>
@@ -68,7 +69,7 @@
         <table id="example" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">
             <thead>
                 <tr>
-        <th>What you'll need</th>
+        <th colspan="2">What you'll need</th>
         </tr>
         </thead>
         <tbody>
@@ -78,13 +79,6 @@
         </tr>
         </tbody>
         </table>
-        <!-- <td>lstposts[fullId].ingredients.name</td>
-        <td>lstposts.ingredients.name</td>
-        <td>lstposts.ingredients.name</td>
-        <td>lstposts.ingredients.name</td>
-        <td>lstposts.ingredients.name</td> -->
-        <!-- <label><strong>Ingredients:</strong></label>
-        <p>{{lstposts[fullId].ingredientsString}}</p> -->
         <label><strong>Food Pairing:</strong></label>
         <p>{{lstposts[fullId].food_pairingString}}</p>
         <label><strong>Volume</strong></label>
