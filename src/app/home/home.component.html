@@ -12,7 +12,7 @@
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
-                  <input type="checkbox" name="before" [(ngModel)]="brewed_before" #before="ngModel" value="Unchecked" (change)='onCheck($event)' required />
+                  <input type="checkbox" name="Before" [(ngModel)]="brewBefore" #before="ngModel" value="Unchecked" (change)='onCheck($event)' required />
                 </span>
                 <span class="input-group-text">Brewed Before</span>
               </div>
@@ -25,7 +25,7 @@
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <input type="checkbox" name="after" [(ngModel)]="brewed_after" required #after="ngModel" value="Unchecked" (change)='onCheck($event)' required />
+                  <input type="checkbox" name="After" [(ngModel)]="brewAfter" required #after="ngModel" value="Unchecked" (change)='onCheck($event)' required />
                 </span>
                 <span class="input-group-text">Brewed After</span>
                 <select *ngIf="after.valid" [(ngModel)]="ayear" name="ayear" (change)="onChange()">

@@ -18,6 +18,10 @@ export class HomeComponent implements OnInit {
   byear;
   ayear;
   abvpercent;
+  brewBefore: any;
+  brewAfter: any;
+  Al: any;
+  V: any;
   // tslint:disable-next-line:variable-name
   constructor(private _beerService: BeerServiceService, private _router: Router) { }
 

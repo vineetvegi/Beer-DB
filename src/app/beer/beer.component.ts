@@ -30,9 +30,13 @@ export class BeerComponent implements OnInit {
   toggleId: any;
   modalObj: any;
   fullId;
+  description: any;
+  length: any;
+
+  // style, display = 'none'
 
   // EventHandler to update description state. For expanding the description.
-  toggleRead(event, target, style, display = 'none') {
+  toggleRead(event) {
     this.toggleId = event.target.id;
   }
   // EventHandler for pagination
